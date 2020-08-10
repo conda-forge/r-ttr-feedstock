@@ -3,7 +3,7 @@ About r-ttr
 
 Home: https://github.com/joshuaulrich/TTR
 
-Package license: GPL-2
+Package license: GPL-2.0-or-later
 
 Feedstock license: BSD-3-Clause
 
