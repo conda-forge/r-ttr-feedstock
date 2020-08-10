@@ -1,4 +1,4 @@
-{% set version = "0.23-6" %}
+{% set version = "0.24.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/TTR_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/TTR/TTR_{{ version }}.tar.gz
-  sha256: afc10a89d3a18f121ddf0f7256408eeb05cc64e18ee94e654bfa803e5415e265
+  sha256: 42c5ae719856c9997fd3083a84aab3f44ee237943ee4a6bf860df68552769535
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -51,7 +51,7 @@ about:
   summary: Functions and data to construct technical trading rules with R.
   license_family: GPL2
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
