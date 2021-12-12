@@ -1,4 +1,4 @@
-{% set version = "0.24.2" %}
+{% set version = "0.24.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/TTR_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/TTR/TTR_{{ version }}.tar.gz
-  sha256: 2587b988d9199474a19470b9b999b99133d0d8aa45410813e05c5f0ed763711b
+  sha256: 4d9aef32647664be5cf965b05f21ed62cde9425fa87c21530852e05ef7aaba87
 
 build:
   merge_build_host: true  # [win]
