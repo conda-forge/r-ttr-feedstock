@@ -1,6 +1,5 @@
 {% set version = "0.24.4" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-ttr
@@ -13,8 +12,7 @@ source:
   sha256: 89732b9c359bae2f41cd23db649f0897c10fab0702d780c4c25a997322710284
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -26,7 +24,9 @@ requirements:
     - r-zoo                      # [build_platform != target_platform]
     - r-xts                      # [build_platform != target_platform]
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
@@ -39,7 +39,6 @@ requirements:
     - r-zoo
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-curl
     - r-xts >=0.10_0
     - r-zoo
